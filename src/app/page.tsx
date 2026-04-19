@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 interface product {
   _id: string;
@@ -19,11 +20,13 @@ export default function Home() {
   const [products, setProducts] = useState<any[]>([]);
   const [search, setSearch] = useState("");
   const [user, setUser] = useState<any>(null);
+  const  router = useRouter();
 
   const addToCart = async (product: any) => {
     const token = localStorage.getItem("token");
     if (!token) {
-      alert("please login to add item to cart");
+      alert("please register to add item to cart");
+      router.push("/register");
       return;
     }
 
