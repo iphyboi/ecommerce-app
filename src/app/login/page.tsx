@@ -39,28 +39,46 @@ export default function LoginPage() {
 };
 
     return (
-        <div style={{ padding: "20px" }}>
-            <h1>Login</h1>
+        <div className="flex items-center justify-center min-h-screen bg-gray-100">
+            <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-sm">
+            <h1 className="text-2x1 font-bold mb-4 text-center">
+            Login
+            </h1>
 
             <form onSubmit={handleLogin}>
                 <input
-                type="email"
+                type="text"
                 placeholder="Email"
+                className="w-full border p-2 mb-3"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                style={{ display: "block", marginBottom: "10px" }}
                 />
 
                 <input
                 type="password"
                 placeholder="Password"
+                className="w-full border p-2 mb-3"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                style={{ display: "block", marginBottom: "10px" }}
                 />
 
-                <button type="submit">Login</button>
-            </form>
-        </div>
+                <button className="w-full bg-green-600 text-white p-2 rounded">
+                    Login
+                </button>
+                </form>
+
+                <p className="text-center mt-3 text-sm">
+                    Don't have an account?(" ")
+                    <span
+                    className="text-blue-600 cursor-pointer"
+                    onClick={() => router.push("/register")} 
+                    >
+                        Register
+                    </span>
+                </p>
+                </div>
+                </div>
     );
 }
+
+            

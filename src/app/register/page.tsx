@@ -37,28 +37,44 @@ const  router = useRouter();
     };
 
     return (
-        <div style={{ padding: "20px" }}>
-            <h1>Register</h1>
+        <div className="flex items-center justify-center min-h-screen bg-gray-100">
+            <div className="bg-white p-6 rounded-lg shadow-md w-full max-w-sm">
+                <h1 className="text-2x1 font-bold mb-4 text-center">
+                    Register
+                </h1>
 
-            <form onSubmit={handleRegister}>
-                <input
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                style={{ display: "block", marginBottom: "10px" }}
-                />
+                <form onSubmit={handleRegister}>
+                    <input
+                    type="text"
+                    placeholder="Email"
+                    className="w-full order p-2 mb-3"
+                    value={email}      
+                    onChange={(e) => setEmail(e.target.value)}
+                    />
 
-                <input
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                style={{ display: "block", marginBottom: "10px" }}
-                />
+                    <input
+                    type="password"
+                    placeholder="Password"
+                    className="w-full border p-2 mb-3"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    />
 
-                <button type="submit">Register</button>
-            </form>
+                    <button className="w-full bg-blue-600 text-white p-2 rounded">
+                        Register
+                    </button>
+                </form>
+
+                <p className="text-center mt-3 text-sm">
+                    Already have an account?(" ")
+                    <span
+                    className="text-blue-600 cursor-pointer"
+                    onClick={() => router.push("/login")}
+                    >
+                        Login
+                    </span>
+                </p>
+            </div>
         </div>
     );
-    }
+}
