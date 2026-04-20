@@ -23,23 +23,16 @@ REST API
             Features
 
 - User authentication (login/registration)
-- 
 - Product listing and display
-- 
 - Add to cart functionality
-- 
 - API for managing products
-- 
 - Responsive design
 
              Project Structure
 
   - `/app` - Frontend pages
-  - 
   - `/api` - Backend API routes
-  - 
-  - `/models` - Database schemas
-  - 
+  - `/models` - Database schemas 
   - `/components` - Reusable UI components
  
                 Installation
