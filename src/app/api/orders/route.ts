@@ -28,6 +28,7 @@ export async function POST(req: Request) {
         products: cart.products,
         total,
     });
+    await order.save();
 
     await Cart.findOneAndDelete({ userId: user.id });
     return NextResponse.json({
