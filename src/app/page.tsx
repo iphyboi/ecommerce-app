@@ -180,7 +180,7 @@ export default function Home() {
               />
 
               <div className="p-4">
-                <h2 className="font-semibold mt-2 text-sm">
+                <h2 className="font-semibold mt-2 text-sm text-black">
                   {p.name}
                 </h2>
 

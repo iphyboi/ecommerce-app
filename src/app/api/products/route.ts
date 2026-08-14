@@ -84,13 +84,21 @@ export async function DELETE(req: Request) {
   await connectDB();
 
   const { id } = await req.json();
-  await Product.findByIdAndDelete(id);
+  if (!id) {
+    return NextResponse.json({ message: "Product ID is missing"}, { status: 400 });
+  }
+  const deletedProduct = await Product.findByIdAndDelete(id);
+
+  if (!deletedProduct) {
+    return NextResponse.json({ message: "Product not found in database" }, { status: 404});
+  }
 
   return NextResponse.json({ message: "Deleted successfully" });
 } catch (error: any) {
+    console.error("Delete error:", error);
     return NextResponse.json(
         { message: error.message },
-        { status: 401}
+        { status: 500}
     );
 }
 }
